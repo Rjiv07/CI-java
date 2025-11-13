@@ -9,7 +9,7 @@ stages
     steps
     {
       echo "Building stage"
-      git branch:'main', url:"https:"
+      git branch:'main', url:"https://github.com/Rjiv07/CI-java.git"
     }
   }
   stage('compile-java')

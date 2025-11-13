@@ -1,0 +1,29 @@
+pipeline
+{
+  agent any
+  tools {jdk "jdk21"}
+stages
+{
+  stage('checkout')
+  {
+    steps
+    {
+      echo "Building stage"
+      git branch:'main', url:"https:"
+    }
+  }
+  stage('compile-java')
+  {
+    steps{
+      sh "javac A.java"
+    }
+  }
+  stage('Runtime')
+  {
+    steps{
+      echo "Running Java"
+      sh "java A"
+    }
+}
+}
+}
